@@ -3,7 +3,7 @@ import java.util.List;
 
 public class BulletPool {
 
-    public static final int SIZE = 100;
+    public static final int SIZE = 10;
     public static final int OFFSCREEN_X = 999;
     public static final int OFFSCREEN_Y = 999;
     public static final int IDLE_SPEED = 0;

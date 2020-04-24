@@ -7,6 +7,7 @@ public class Game extends Observable {
     private int width = 600;
     private int height = 600;
 
+    private List<Bullet> bulletPool;
     private List<Bullet> bullets;
     private Thread mainLoop;
     private boolean alive;
@@ -50,6 +51,7 @@ public class Game extends Observable {
                     bullet.getX() >= width ||
                     bullet.getY() <= 0 ||
                     bullet.getY() >= height) {
+
                 toRemove.add(bullet);
                 BulletPool.getInstance().releaseBullet(bullet);
             }
@@ -73,7 +75,7 @@ public class Game extends Observable {
 
     public void burstBullets(int x, int y) {
 
-        for(int i = -1; 1 <= 1; i++) {
+        for(int i = -1; i <= 1; i++) {
             for(int j = -1; j<= 1; j++) {
                 if (i != 0|| j != 0) {
                     bullets.add(BulletPool.getInstance().getBullet(x, y, i, j));
